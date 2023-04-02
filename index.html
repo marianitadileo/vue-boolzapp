@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="app">
+        <main>
+            <div class="box">
+                <!-- aside  -->
+                <aside>
+                    <div class="aside-top">
+                        <div class="left">
+                            <img class="img-avatar" src="img/avatar_io.jpg" alt="my-photo">
+                            <span>Sofia</span>
+                        </div>
+                        
+                       <div class="icons">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="aside-bot">
+                        <!-- attivazione notifiche  -->
+                        <div class="notice">
+                            <div class="bell"> 
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="text-bell"> 
+                                <div>Ricevi notifiche di nuovi messaggi</div>
+                                <span class="grey-text"><u>Attiva notifiche desktop</u></span>
+                            </div>
+                        </div>
+                        <!-- iniziare o cercare una chat  -->
+                        <div class="new-chat">
+                            <div class="wrap-filter flex">
+                                <div class="filter">
+                                    <i class="fa-solid fa-magnifying-glass icons glass"></i>
+                                    <input class="chat-input grey-text" type="text" placeholder="Cerca o inizia una nuova chat"> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- rubrica - lista chat  -->
+                        <div class="my-chat">
+                            <ul class="list-chat">
+                                <li v-for="(element, index) in contacts">
+                                    <img class="img-avatar" :src="element.avatar" alt="avatar">
+                                    <div class="name-users">
+                                        <div>{{element.name}}</div>
+                                        <div class="grey-text">Ultimo messaggio inviato</div>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <!-- chat aperte -->
+                <div class="box-chat">
+                    <!-- contatto chat  -->
+                    <div class="chat-top">
+                        <div class="flex">
+                            <img class="img-avatar" src="img/avatar_1.jpg" alt="avatar">
+                            <div class="profile-chat">
+                                <h4>{{contacts[0].name}}</h4>
+                                <span class="grey-text">Ultimo accesso oggi alle 12:00</span>
+                            </div>  
+                        </div> 
+                        <div class="icons">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </div>
+                    <!-- chat messaggi -->
+                    <div class="chat">
+                        <div class="mex-body">
+                            <div class="green-wrap">
+                                <div class="green-mex">ciao green</div>
+                            </div>
+                            <div class="green-wrap">
+                                <div class="green-mex">ciao green</div>
+                            </div>
+                            <div class="white-wrap">
+                                <div class="white-mex">ciao white</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- scrivere il messaggio  -->
+                    <div class="input-message">
+                        <div class="smile icons">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="send-message">
+                            <input class="message" type="text" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="audio">
+                            <i class="fa-solid fa-microphone icons"></i>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

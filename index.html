@@ -51,7 +51,7 @@
                         <!-- rubrica - lista chat  -->
                         <div class="my-chat">
                             <ul class="list-chat">
-                                <li v-for="(element, index) in contacts">
+                                <li v-for="(element, index) in contacts" @click="openChat(index)">
                                     <img class="img-avatar" :src="element.avatar" alt="avatar">
                                     <div class="name-users">
                                         <div>{{element.name}}</div>
@@ -72,7 +72,7 @@
                         <div class="flex">
                             <img class="img-avatar" src="img/avatar_1.jpg" alt="avatar">
                             <div class="profile-chat">
-                                <h4>{{contacts[0].name}}</h4>
+                                <h4>{{contacts[activeName].name}}</h4>
                                 <span class="grey-text">Ultimo accesso oggi alle 12:00</span>
                             </div>  
                         </div> 
@@ -85,15 +85,17 @@
                     <!-- chat messaggi -->
                     <div class="chat">
                         <div class="mex-body">
-                            <div class="green-wrap">
-                                <div class="green-mex">ciao green</div>
-                            </div>
-                            <div class="green-wrap">
+                            <!-- <div class="green-wrap"> -->
+                                <div :class="(element.status == 'sent'?'green-wrap':'white-wrap')" v-for="(element) in contacts[activeName].messages">
+                                    <div :class="(element.status == 'sent'?'green-mex':'white-mex')">{{element.message}}</div>
+                                </div>
+                            <!-- </div> -->
+                            <!-- <div class="green-wrap">
                                 <div class="green-mex">ciao green</div>
                             </div>
                             <div class="white-wrap">
                                 <div class="white-mex">ciao white</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 

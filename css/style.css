@@ -147,7 +147,6 @@ aside {
 }
 
 .white-mex {
-    height: 40px;
     width: 30%;
     font-size: 1.1rem;
     background-color: whitesmoke;
@@ -157,7 +156,6 @@ aside {
 }
 
 .green-mex {
-    height: 40px;
     width: 30%;
     font-size: 1.1rem;
     background-color: #D5F9BA;
@@ -169,11 +167,13 @@ aside {
 .green-wrap {
     display: flex;
     justify-content: flex-end;
+    margin-right: 50px;
 }
 
 .white-wrap {
     display: flex;
     justify-content: flex-start;
+    margin-left: 50px;
 }
 
 /* SCRIVERE IL MESSAGGIO */

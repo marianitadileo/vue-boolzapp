@@ -7,6 +7,8 @@
     <title>Boolzapp</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.47/vue.global.min.js"></script>
 </head>
 <body>
 
@@ -108,7 +110,7 @@
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="send-message">
-                            <input class="message" type="text" placeholder="Scrivi un messaggio">
+                            <input class="message" type="text" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="sendMessage()">
                         </div>
                         <div class="audio">
                             <i class="fa-solid fa-microphone icons"></i>
@@ -120,7 +122,9 @@
 
         </main>
     </div>
+    <!-- Luxon  -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <!-- JS  -->
     <script src="./js/script.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </body>
 </html>

@@ -1,8 +1,11 @@
 const { createApp } = Vue;
+
+const dt = luxon.DateTime;
 createApp({
     data() {
         return {
             activeName: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -173,6 +176,22 @@ createApp({
         openChat(newIndex) {
             this.activeName = newIndex;
             console.log(this.openChat);
+        },
+        getTime(date) {
+            const timeMex = dt.fromFormat(date, "dd/MM/yyyy hh:mm:ss");
+            return timeMex.toLocaleString(dt.TIME_24_SIMPLE);
+        },
+        sendMessage() {
+            if(this.newMessage.length > 0) {
+                const myMessage = {
+                    message: this.newMessage,
+                    date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                    status: 'sent'
+                }
+                console.log(myMessage);
+                this.contacts[this.activeName].messages.push(myMessage);
+                this.newMessage = "";
+            } 
         }
     }
 }).mount('#app')

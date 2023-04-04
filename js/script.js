@@ -3,7 +3,6 @@ createApp({
     data() {
         return {
             activeName: 0,
-
             contacts: [
                 {
                     name: 'Michele',
@@ -171,9 +170,9 @@ createApp({
         }
     },
     methods: {
-        openChat(index) {
-            this.activeName = index;
-            console.log(activeName);
+        openChat(newIndex) {
+            this.activeName = newIndex;
+            console.log(this.openChat);
         }
     }
 }).mount('#app')

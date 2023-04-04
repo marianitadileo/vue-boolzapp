@@ -191,7 +191,20 @@ createApp({
                 console.log(myMessage);
                 this.contacts[this.activeName].messages.push(myMessage);
                 this.newMessage = "";
+                setTimeout(() => {
+                    this.userMessage();
+                }, 1000);
             } 
-        }
+        },
+        userMessage() {
+            const userSendMessage = {
+                message: "Ok",
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                status: 'received'
+            }
+            this.contacts[this.activeName].messages.push(userSendMessage);
+            console.log(this.userMessage);
+        },
+    
     }
 }).mount('#app')
